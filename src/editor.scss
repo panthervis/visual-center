@@ -1,0 +1,138 @@
+button:focus{
+  outline: none;
+}
+.modal-content{
+  overflow: hidden;
+}
+.tab-content{
+  height: 86% !important;
+}
+.close-btn,
+.close-btn:hover {
+font-size: 18px;
+background-color: #585858 !important;
+color: white;
+width: 30px;
+height: 30px;
+border-radius: 2px;
+opacity: 1;
+border: none;
+}
+.zoom-range button,
+.rotate-container button {
+border: none;
+width: 30px;
+height: 30px;
+font-weight: 400;
+box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+background-color: #ffffff;
+color: #585858;
+}
+.zoom-range input {
+width: 50px;
+border: none;
+text-align: center;
+box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+.editor-img-area {
+min-height: 230px;
+padding: 15px 15px 5px;
+}
+.nav-link.active {
+background-color: #f4f4f4 !important;
+border: none !important;
+color: #585858;
+}
+.nav-tabs,
+.nav-link,
+.nav-link:hover {
+border: none !important;
+color: #585858;
+}
+.tab-content {
+display: block;
+background-color: #f4f4f4 !important;
+}
+.toggle-btn button {
+border: none;
+color: #585858;
+padding: 5px 15px;
+border: 1px solid #585858;
+width: 100px;
+}
+.eractive {
+background-color: #585858;
+color: white !important;
+}
+.toggle-btn .erase {
+border-radius: 6px 0px 0px 6px;
+border-right: 0px;
+}
+.toggle-btn .restore {
+border-radius: 0px 6px 6px 0px;
+border-left: 0px;
+}
+.erslider {
+width: 280px;
+margin: 0 auto;
+}
+.erslider .slider::before {
+  background-color: #585858;
+}
+.erslider .slider {
+background-color: transparent !important;
+border: 1px solid #585858;
+border-radius: 50px;
+height: 8px;
+outline: none;
+}
+.erslider .slider::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background-color: #585858; /* Green background */
+cursor: pointer; /* Cursor on hover */
+}
+
+input[type="range"]::-moz-range-progress,
+input[type="range"]::-moz-range-track,
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+background-color: #585858;
+}
+.upload-photo {
+background-color: #6f6f70;
+color: white;
+text-align: center;
+cursor: pointer;
+width: 80px;
+height: 80px;
+}
+.upload-photo .text {
+width: 30px;
+font-size: 12px;
+margin: 0 auto;
+line-height: 15px;
+}
+.upload-photo i {
+font-size: 29px;
+}
+
+@media (min-width: 576px) {
+.modal-dialog {
+  max-width: 900px;
+  margin: 1.75rem auto;
+}
+}
+@media (max-width: 768px) {
+  .editorSection {
+    width: 950px;
+    overflow: scroll;
+  }
+  .editor-inner{
+    width: 950px;
+    margin: 100px;
+  }
+}

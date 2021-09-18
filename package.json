@@ -1,0 +1,91 @@
+{
+  "name": "hockey-poster",
+  "description": "Tool that generate poster for hockey players -- https://utpbuilder.com/imagick-demo/visual-center/",
+  "version": "1.2.0",
+  "private": false,
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhammadabdullah34907/poster-bgremove.git"
+  },
+  "author": "Vadim Visnevschi <vadimauss@yahoo.com> (http://github.com/vadimaus)",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/jquery": "^3.5.4",
+    "@types/node": "^12.12.54",
+    "@types/react": "^16.9.46",
+    "@types/react-bootstrap": "^0.32.22",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "axios": "^0.19.0",
+    "babel-preset-env": "^1.7.0",
+    "base64-image-utils": "^1.1.2",
+    "bootstrap": "^4.4.1",
+    "d3-ease": "^1.0.6",
+    "jquery": "^3.5.1",
+    "js-base64": "^2.5.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.14.1",
+    "node-vibrant": "^3.1.5",
+    "query-string": "^6.9.0",
+    "react": "^16.9.0",
+    "react-base64-downloader": "^2.1.6",
+    "react-bootstrap": "^1.3.0",
+    "react-circular-progressbar": "^2.0.3",
+    "react-dom": "^16.9.0",
+    "react-dropzone": "^4.0.0",
+    "react-emojione": "^5.0.1",
+    "react-image-lightbox": "^5.1.1",
+    "react-input-color": "^2.0.28",
+    "react-move": "^6.1.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.1.2",
+    "react-spinners": "^0.6.1",
+    "react-switch": "^5.0.1",
+    "react-toastify": "^5.5.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "rxjs": "^6.5.3",
+    "rxjs-compat": "^6.5.3",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev REACT_APP_ENVIRONMENT=local react-scripts start",
+    "build-dev": "cross-env NODE_ENV=production REACT_APP_ENVIRONMENT=development react-scripts build",
+    "build": "cross-env NODE_ENV=production REACT_APP_ENVIRONMENT=production react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "gh-pages": "^2.1.1"
+  }
+}

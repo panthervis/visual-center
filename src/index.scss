@@ -1,0 +1,716 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+  /* background: #eeeeef; */
+  background: white;
+  color: #333;
+}
+
+.jumbotron {
+  background: white;
+}
+
+a {
+  color: inherit;
+  color: #2980b9;
+  font-weight: 300;
+}
+a:hover {
+  color: #000;
+}
+strong {
+  font-weight: 400;
+}
+
+.app {
+  width: calc(100vw - 20px);
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 1.5rem 2rem 0;
+}
+
+.app-header .title {
+  float: left;
+  margin-left: 300px;
+}
+
+.app-header .back-link {
+  float: right;
+}
+
+.app-sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 300px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #000cff; /* royal blue */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.app-sidebar .heading {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-sidebar img {
+  width: 300px;
+  height: auto;
+}
+
+.app-main {
+  position: relative;
+  margin-left: 300px;
+  clear: both;
+}
+
+.app-footer {
+  width: 80vw; /* Full-height: remove this if you want "auto" height */
+  height: auto; /* Set the width of the footer */
+  margin: 0 auto 6rem;
+  /* position: fixed; /* Fixed footer (stay in place on scroll) */
+  /* z-index: 1; /* Stay on top */
+  /* bottom: 0; /* Stay at the top */
+  background-color: #000cff; /* Black */
+  overflow-y: hidden; /* Disable horizontal scroll */
+}
+
+.app-footer .heading {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-footer img {
+  height: 350px;
+  width: auto;
+}
+
+.app-footer img.banner {
+  height: 700px;
+}
+
+.app-title {
+  font-size: 2em;
+}
+
+.dropzone {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  outline: 2px dashed rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  padding: 1rem 2rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+.dropzone:hover {
+  outline: 2px dashed rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.padding-2 {
+  padding: 2rem;
+}
+
+.column {
+  width: 35vmin;
+  margin: 5vmin 2.5vmin 0;
+  display: inline-block;
+}
+
+.images-section > .column {
+  margin: 3vmin 6.5vmin;
+}
+
+.images-section > .column:last-child > .dropzone .loader-button {
+  margin: unset;
+}
+
+.images-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* preview section for team poster */
+.team-app .app-main {
+  margin-left: 0px;
+  overflow-x: hidden;
+}
+
+.team-app .column.two-span {
+  width: 70vmin;
+}
+
+.team-app .image-preview-container {
+  margin: 2rem auto;
+  padding-top: 15vmin;
+  max-height: 50vmin;
+  width: 80vw;
+
+  outline: 3px dashed rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.image-preview-container .image-preview-controls {
+  position: absolute;
+  right: 10%;
+  top: 5%;
+}
+
+/* show guide axes */
+.team-app .image-preview-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 0, 0, 0.95);
+  position: absolute;
+  z-index: 3;
+  top: calc(50% - 1px);
+  left: 0;
+}
+
+.team-app .image-preview-container::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 0, 0, 0.95);
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: calc(50% - 1px);
+}
+
+.team-app .demo-image-container {
+  height: 25vmin;
+}
+
+.team-app .column.two-span .demo-image-container {
+  width: 60vmin;
+}
+
+.team-app .image-preview-container .preview-image {
+  max-height: 35vmin;
+}
+
+/**** Photo Day ****/
+.photo-day-app .column {
+  width: 47vmin;
+}
+
+/***** Socks ****/
+.socks-app .column {
+  width: 47vmin;
+}
+
+.demo-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 26vmin;
+  height: auto;
+  z-index: 2;
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.-show-guides .demo-image {
+  outline: 1px dashed rgba(128, 128, 128, 0.2);
+}
+
+.demo-image:hover {
+  outline: 1px dashed rgba(128, 128, 128, 0.3);
+}
+
+.demo-image-container {
+  width: 40vmin;
+  height: 40vmin;
+  position: relative;
+  transition: border-radius 0.3s, transform 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 0, rgba(0, 0, 0, 0.05) 0 2px 8px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.demo-image-container.-first::before {
+  content: "Element Center";
+  display: block;
+  position: absolute;
+  top: -2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.-use-circle .demo-image-container {
+  border-radius: 50%;
+}
+
+.demo-image-container-title {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.app-control-container {
+  padding: 1.5rem 0 0;
+}
+
+.app-control-container.hidden-ground {
+  top: 0px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.app-control-container > span {
+  vertical-align: middle;
+}
+
+.app-control {
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 0.25rem 1rem;
+  display: inline-block;
+}
+
+.app-control input {
+  margin-right: 0.5em;
+}
+
+.app-control input,
+.app-control div {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.app-control input[type="number"] {
+  width: 50px;
+}
+
+.app-control .submit {
+  padding: 15px 30px;
+  color: white;
+  background: #2980b9;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  margin: 0 20px 0px;
+}
+
+.app-control .submit.accept {
+  background: rgb(34, 127, 38);
+}
+
+.app-control .submit.accept.disabled {
+  background: transparent;
+  color: rgb(34, 127, 38);
+  cursor: not-allowed;
+  border: 1.5px solid rgb(34, 127, 38);
+}
+
+.download-png {
+  color: white;
+  cursor: pointer;
+  display: inline;
+
+  top: 2px;
+  right: 0px;
+  text-decoration: underline;
+  position: absolute;
+
+  background: transparent;
+  border-width: 0px;
+}
+.download-png:hover {
+  color: #ccc;
+}
+
+.results {
+  font-weight: 300;
+  font-size: 1.333em;
+  line-height: 1.4;
+}
+
+/* options */
+.-show-guides .demo-image-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+  position: absolute;
+  z-index: 3;
+  top: calc(50% - 1px);
+  left: 0;
+}
+.-show-guides .demo-image-container::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: calc(50% - 1px);
+}
+
+@media screen and (max-width: 640px) {
+  .app {
+    padding-top: 1rem;
+  }
+}
+
+@font-face {
+  font-family: "Amigos";
+  src: url("assets/fonts/Amigos.ttf");
+}
+
+@font-face {
+  font-family: "Freshman";
+  src: url("assets/fonts/Freshman.ttf");
+}
+
+@font-face {
+  font-family: "Airstrike";
+  src: url("assets/fonts/Airstrike.ttf");
+}
+
+@font-face {
+  font-family: "A Grazing Mace";
+  src: url("assets/fonts/A Grazing Mace.otf");
+}
+
+@font-face {
+  font-family: "Master of Break";
+  src: url("assets/fonts/Master of Break.otf");
+}
+
+@font-face {
+  font-family: "Howard";
+  src: url("assets/fonts/Howard.ttf");
+}
+
+@font-face {
+  font-family: "Nachtwache";
+  src: url("assets/fonts/Nachtwache.ttf");
+}
+
+.first-name-playground {
+  width: 700px;
+  height: 300px;
+  margin: 1em 3em;
+
+  background: black;
+  color: red;
+  font-family: "Amigos";
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.team-app .hidden-ground > .first-name-playground {
+  width: 2200px;
+}
+
+.photo-day-app .hidden-ground > .first-name-playground,
+.photo-day-app .hidden-ground > .second-name-playground {
+  width: 1053px;
+}
+
+.socks-app .hidden-ground > .first-name-playground,
+.socks-app .hidden-ground > .second-name-playground {
+  width: 300px;
+}
+
+.second-name-playground {
+  width: 700px;
+  height: 400px;
+  margin: 1em 3em;
+
+  background: black;
+  color: red;
+  font-family: "Freshman";
+  -webkit-text-stroke-width: 10px;
+  -webkit-text-stroke-color: white;
+}
+
+/* for WRESTLING, COLTEN text */
+.third-name-playground {
+  width: 540px;
+  height: 320px;
+  margin: 1em 3em;
+
+  background: black;
+  color: green;
+  font-family: "Freshman";
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.loader-button {
+  padding: 10px 15px;
+  color: white;
+  background: #2980b9;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  margin: 0 2em;
+  z-index: 10;
+}
+
+.loader-button.bg-removed {
+  color: #2980b9;
+  background: transparent;
+  border: 1px solid #2980b9;
+}
+/* .loader-button div {
+  margin: 0px;
+} */
+
+.demo-image-controller {
+  margin-left: 0.5em;
+  z-index: 11111;
+}
+
+.move-image-up-action,
+.move-image-down-action,
+.clear-image-action {
+  width: 7vmin;
+  height: auto;
+  cursor: pointer;
+
+  z-index: 4;
+  opacity: 0.75;
+}
+
+.move-image-up-action,
+.move-image-down-action {
+  /* background: #f0f0f1; */
+  background: white;
+  border-radius: 15px;
+  padding: 2px;
+}
+
+.move-image-up-action:hover,
+.move-image-down-action:hover,
+.clear-image-action:hover {
+  opacity: 0.95;
+}
+
+.move-image-down-action {
+  margin-top: 1em;
+  transform: rotate(180deg);
+}
+
+.demo-image-bottom-controller {
+  position: absolute;
+  bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  left: 30%;
+  z-index: 11111;
+}
+
+.demo-image-bottom-controller .move-image-up-action {
+  transform: rotate(-90deg);
+}
+
+.demo-image-bottom-controller .move-image-down-action {
+  transform: rotate(90deg);
+  margin-left: 1em;
+}
+
+label.name:before {
+  content: "Y offset";
+  font-style: italic;
+  font-weight: 700;
+  margin-right: 10px;
+}
+label.name .move-image-up {
+  margin-left: 10px;
+}
+label.name .move-image-down-action {
+  margin-top: 0px;
+}
+
+label.name img {
+  width: 3.5vmin;
+}
+
+.clipping-magic-switch {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.rotate-image-left,
+.rotate-image-right {
+  display: inline-block;
+  margin: 0 1em;
+}
+.rotate-image-left-action {
+  width: 7vmin;
+  height: auto;
+  cursor: pointer;
+
+  z-index: 4;
+  opacity: 0.75;
+}
+
+.rotate-image-left-action:hover {
+  opacity: 0.95;
+}
+
+.rotate-image-right-action:hover {
+  opacity: 0.95;
+}
+
+.rotate-image-right-action {
+  width: 7vmin;
+  height: auto;
+  cursor: pointer;
+  margin-top: 1em;
+  transform: rotateY(180deg);
+  z-index: 4;
+
+  opacity: 0.75;
+}
+
+/* Palette */
+.vibrant-palette > div {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.vibrant-palette .color {
+  width: 40px;
+  height: 40px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.vibrant-palette .shadow-z-1 {
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Color picker */
+.player-image-picked-box,
+.player-image-picked-color-box {
+  width: 40px;
+  height: 100%;
+  border: 10px solid black;
+}
+
+div.ReactModalPortal div.ril-inner img {
+  cursor: url(assets/img/dropper-cursor.png) 2 2, pointer;
+}
+
+img.color-pick {
+  filter: drop-shadow(0.5px 2px 1px grey) hue-rotate(45deg);
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+img.color-pick:hover {
+  filter: drop-shadow(1px 2px 2.5px grey) hue-rotate(45deg);
+  transform: rotate(-45deg);
+}
+
+.product-progress-bar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc((80vh - 40px) / 2);
+  width: 160px !important;
+}
+
+.team-app .product-progress-bar {
+  margin-top: 100px;
+}
+
+.image-width-scale-mode > label,
+.image-width-scale-mode input[type="number"] {
+  margin: 0 10px;
+}
+
+.bg-remove-button {
+  z-index: 10;
+}
+
+.app-control .product-id {
+  color: white;
+  background: rgb(34, 127, 38);
+  font-size: 25px;
+  padding: 8px 30px;
+  border-radius: 10px;
+  border: 2px solid white;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.copy-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.copy-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 102%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.copy-tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

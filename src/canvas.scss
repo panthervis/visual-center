@@ -1,0 +1,276 @@
+.tooltip {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(141, 141, 141, 0.5);
+    border-radius: 30px;
+    background-color: rgba(198, 198, 198, 0.3);
+  }
+  
+  .canvas-container {
+    border: 2px solid black;
+    cursor: none;
+  }
+  .cursor {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    cursor: none;
+    pointer-events: none;
+  }
+  .hidden-item-container {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  
+    * {
+      opacity: 0;
+    }
+  }
+  
+  #cursor {
+    position: absolute;
+    cursor: none;
+  }
+  
+  $border: 1px solid #363a40;
+  
+  @mixin button {
+    font-size: 16px;
+    font-family: "Mulish", sans-serif;
+    height: 32px;
+    text-align: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    border: $border;
+    outline: none;
+    background-color: #535962;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color: #3e45ff;
+    }
+  }
+  
+  @mixin button-group {
+    @include button;
+  
+    &:first-of-type {
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+    }
+  
+    &:last-of-type {
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  
+  .zoom-container {
+    display: flex;
+    width: 200px;
+    height: 32px;
+  
+    &.blur {
+      position: relative;
+  
+      span {
+        position: absolute;
+        top: -25px;
+      }
+    }
+  
+    input {
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      width: 50px;
+      height: 20px;
+      padding: 5px;
+      text-align: center;
+      color: white;
+      border: $border;
+      outline: none;
+      background-color: #535962;
+    }
+  
+    button {
+      @include button-group;
+    }
+  }
+  
+  .above-canvas-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  
+    button {
+      @include button-group;
+    }
+  
+    .history-container {
+      button:first-child {
+        border-right: $border;
+      }
+    }
+  }
+  
+  .tool-container {
+    display: flex;
+    align-content: center;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+    button {
+      @include button-group;
+  
+      &:first-of-type {
+        margin-left: 20px;
+        border-right: $border;
+      }
+  
+      &.selected {
+        background-color: #343ad6;
+      }
+    }
+  }
+  
+  .slider-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  
+    svg:first-child {
+      margin-right: 8px;
+      display: block;
+    }
+  
+    svg:last-child {
+      margin-left: 8px;
+      display: block;
+    }
+  }
+  
+  .background-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    place-items: center;
+    margin-top: 15px;
+  
+    span {
+      font-family: "Mulish", sans-serif;
+      font-weight: bold;
+    }
+  
+    button.transparent {
+      @include button;
+      margin-left: 20px;
+    }
+  
+    .option-group {
+      display: flex;
+    }
+  
+    .zoom-container {
+      margin-left: 20px;
+    }
+  
+    .color-picker-container,
+    .file-picker-container {
+      $button-size: 90px;
+  
+      width: $button-size - 20px;
+      height: $button-size - 10px !important;
+      position: relative;
+      overflow: hidden;
+  
+      background-size: $button-size;
+      background-position: 0;
+      background-repeat: no-repeat;
+  
+      &.color-picker-container {
+        background-image: url("./colors.png");
+  
+        &::after {
+          content: "Color";
+          left: $button-size / 2 - 46.7px / 2;
+        }
+      }
+  
+      &.file-picker-container {
+        background-image: url("./photo.png");
+  
+        &::after {
+          content: "Photo";
+          left: $button-size / 2 - 51.6px / 2;
+        }
+      }
+  
+      &:hover::after {
+        background-color: rgba(222, 218, 191, 0.81);
+      }
+  
+      &::after {
+        position: absolute;
+        z-index: 100;
+        color: black;
+        font-weight: bold;
+        background-color: rgba(222, 218, 191, 0.54);
+        padding: 4px;
+        border-radius: 3px;
+        top: ($button-size - 10) / 2 - 24px / 2;
+        font-family: "Mulish", sans-serif;
+      }
+  
+      img {
+        position: absolute;
+        z-index: 1;
+      }
+  
+      input {
+        position: absolute;
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+      }
+  
+      @include button-group;
+  
+      &:first-of-type {
+        margin-left: 20px;
+        border-right: $border;
+      }
+    }
+  }
+  
+  .download-button {
+    align-self: center;
+    @include button;
+    height: unset;
+    width: 160px;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: #00bfff;
+    border: none;
+  
+    &:hover {
+      background-color: #4c82ff;
+    }
+  }
+  
+  .upload-link {
+    margin-top: 10px;
+    color: #00bfff;
+    font-family: "Mulish", sans-serif;
+    font-weight: bold;
+  
+    &:hover {
+      color: #4c82ff;
+    }
+  }
+  
